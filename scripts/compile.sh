@@ -14,14 +14,8 @@ clang \
   -o dist/example.wasm \
   src/example.c
 
-wasm-as \
-  src/wasm-js-string.wat \
-  -o dist/wasm-js-string.wasm \
-  --enable-reference-types \
-  --enable-gc
-
 wasm-merge \
-  dist/wasm-js-string.wasm wasm-js-string \
+  src/wasm-js-string.wat wasm-js-string \
   dist/example.wasm example \
   -o dist/example-merged.wasm \
   --enable-reference-types \
